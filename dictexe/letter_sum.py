@@ -1,17 +1,43 @@
 #!/usr/bin/env python3
+
 import string
+# letters = string.ascii_lowercase
+# #print (letter)
+#
+# word = input('Type any word: ')
+# histlist = {}
 
-word = input('Type any word: ')
+# for i in letters:
+#     tally = 0
+#     for chac in word:
+#         if chac == i:
+#             tally += 1
+#
+#     if tally > 0:
+#         histlist[i] = tally
+# print(histlist)
 
-letters = string.ascii_lowercase
-#print (letters)
 
-tally = 0
+def histogram (word):
+    letters = string.ascii_lowercase
+    #print (letter)
+    histlist = {}
 
-def letter_histogram(word):
     for i in letters:
-        for chr in word:
-            
+        tally = 0
+        for chac in word:
+            if chac == i:
+                tally += 1
+
+            else:
+                pass
+
+            if tally > 0:
+                histlist[i] = tally
+
+    return histlist
 
 if __name__ == '__main__':
-    return
+    word = input('Type any word: ')
+    histlist = histogram(word)
+    print(histlist)
