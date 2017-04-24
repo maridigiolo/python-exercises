@@ -26,3 +26,28 @@ for i in text:
     print (enc, end="")
 
 print (" ")
+
+#!/usr/bin/env python3
+
+import string
+import sys
+
+def caesar_decipher (rotation, text):
+  answer = ''
+  for t in text:
+    t = t.lower()
+    if t in string.ascii_lowercase:
+      index = string.ascii_lowercase.index(t)
+      index = index - rotation
+      t = string.ascii_lowercase[index]
+
+    answer += t
+
+  return answer
+
+if __name__ == '__main__':
+  rotation = int(sys.argv[1])
+  text = sys.argv[2]
+  answer = caesar_decipher(rotation, text)
+  print('Answer: {}'.format(answer))
+  
