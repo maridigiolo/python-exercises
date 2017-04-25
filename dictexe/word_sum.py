@@ -1,14 +1,16 @@
 #!/usr/bin/env python3
 
-word = input('Paste a paragraph: ')
+#phar - Objects are like people. They're living, breathing things that have knowledge inside them about how to do things and have memory inside them so they can remember things.
+
+phar = input('Paste a paragraph: ').split()
 histlist = {}
 
-tally = 0
-for wrds in word:
-    if wrds not in histlist:
+for word in phar:
+    tally = 0
+    if word in histlist:
         tally += 1
+    else:
+        histlist[word]
 
-    if tally > 0:
-        histlist[wrds] = tally
 
 print(histlist)
